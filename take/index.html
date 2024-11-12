@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAKe @crime</title>
+<link rel="preload" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css">
+<meta name="keywords" content="biolink, bio, crime, crypto, private biolink">
+<meta content="Private biolink" property="description">
+<meta content="Private biolink" property="og:title">
+<meta content="Private biolink" property="og:description">
+<meta content="images/favicon.png" property="og:image">
+<meta content="Private biolink" property="twitter:title">
+<meta property="og:site_name" content="crime.lol">
+<meta property="og:locale" content="en_UK">
+<meta content="Private biolink" property="twitter:description">
+<meta content="images/favicon.png" property="twitter:image">
+<meta property="og:type" content="website">
+<script src="js/antinspect.js"></script>
+<script src="js/title.js"></script>
+<meta content="summary_large_image" name="twitter:card">
+
+<style>
+    body {
+        background-image: url(images/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-family: monospace;
+    }
+
+    .center {
+        text-align: center;
+        backdrop-filter: blur(23px);
+        background-color: rgba(0, 0, 0, 0.41);
+        border-radius: 27px;
+        padding: 35px 15px;
+        transition: opacity 1s, margin-bottom .6s;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .center img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .center p {
+        margin: 0.5em 0;
+        color: #7669da;
+        text-shadow: 0px 0px 16.5px #7669da;
+    }
+
+    .center a {
+        color: white;
+        text-shadow: 0px 0px 16.5px white;
+    }
+
+    .bottom-left {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .socialwrapper {
+        margin-bottom: 7px;
+        padding: 0 15px;
+    }
+
+    .userSocial_1 {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        justify-content: center;
+        margin-top: 30px;
+        row-gap: 11px;
+        width: 100%;
+    }
+
+    .userSocial_2 svg {
+        font-size: 35px;
+        transition: .3s;
+    }
+
+    .userSocial_2 svg:hover {
+        transform: scale(1.1);
+    }
+
+    .userSocial_2 a {
+        display: flex;
+        position: relative;
+    }
+
+    .tooltip-crypto {
+        font-size: 14px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        font-weight: 580!important;
+        color: #f0f0f0;
+        padding: 5px 10px;
+        border-radius: 50px;
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0) translateX(-50%);
+        transition: transform 0.1s ease-out;
+        bottom: 39px;
+    }
+
+    .backgroundvideo {
+        bottom: 0;
+        height: 100vh;
+        left: 0;
+        object-fit: cover;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        z-index: -1;
+    }
+
+    .discord:hover .tooltip-crypto {
+        opacity: 1;
+        visibility: visible;
+        animation: popin 0.1s ease-out forwards;
+    }
+</style>
+</head>
+<body onload="document.body.style.opacity='1'" style="opacity: 1;">
+ 
+<div class="overlay" id="overlay">
+    <div class="enterscreen" style="font-family: Array-test;">
+        Click to enter...
+    </div>
+</div>
+<audio autoplay="" id="audioPlayer" loop="">
+    <source src="media/take.mp3" type="audio/mp3">
+</audio>
+<div class="container">
+    <div class="center">
+        <img src="images/pfp.jpg" alt="Maxwalks" class="profile img-fluid">
+        <h1 class="title">TAKe</h1>
+        <div class="icons-container rounded-pill mx-auto w-50 column">
+            <i class="fas fa-gun fa-sm position-relative">
+                <div class="tooltip position-absolute" style="font-family: Array-test;">$gang</div>
+            </i>
+            <i class="fas fa-dollar fa-sm position-relative">
+                <div class="tooltip position-absolute" style="font-family: Array-test;">$broke</div>
+            </i>
+            <i class="bi bi-gem position-relative px-auto">
+                <div class="tooltip position-absolute" style="font-family: Array-test; bottom: 21px;">$OG</div>
+            </i>
+        </div>
+        <div class="space"></div>
+        <p>Discord: <a href="javascript:void(0)" onclick="copyToClipboard('discord', this)" class="discord" style="text-decoration: none;">yg2</a></p>
+        <div class="tooltip-crypto"><a href="javascript:void(0)" onclick="copyToClipboard('discord', this)" class="discord" style="text-decoration: none;">Copy Username</a></div>
+    </div>   
+</div>
+<a href="/" class="back-to-index">← </a>
+<img src="images/anom_weapon.gif" alt="GIF" class="bottom-left">
+<script>
+    function copyToClipboard(address, element) {
+        const addresses = {
+            'discord': 'yg2'
+        };
+        const textToCopy = addresses[address];
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const tooltip = element.querySelector('.tooltip-crypto');
+            tooltip.textContent = 'Copied!';
+            setTimeout(() => {
+                tooltip.textContent = 'Copy Address';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var overlay = document.getElementById('overlay');
+        var audioPlayer = document.getElementById('audioPlayer');
+        overlay.addEventListener('click', function () {
+            overlay.classList.add('hidden');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 750);
+            audioPlayer.play()
+        });
+    });
+</script>
+</body>
+</html>
